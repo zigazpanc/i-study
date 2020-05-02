@@ -1,7 +1,7 @@
 {
-  "name": "iStudy-Server",
+  "name": "istudy-server",
   "version": "1.0.0",
-  "description": "",
+  "description": "e-learning database",
   "main": "index.js",
   "scripts": {
     "clean": "rimraf dist",
