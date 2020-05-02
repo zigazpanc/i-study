@@ -5,20 +5,20 @@ import bodyParser from 'body-parser';
 import fileUpload from 'express-fileupload';
 import morgan from 'morgan';
 import mongoose from 'mongoose';
-// import {Sequence} from './models/sequence';
+import {Sequence} from './models/sequence';
 import session from 'express-session';
 import cookieParser from 'cookie-parser';
 import cors from 'cors';
 import passport from 'passport';
 
 import config from './config';
-// import router from './routes/router';
+import router from './routes/router';
 
-// import * as SearchCourse from './controllers/search-course';
-// import * as AuthorCourse from './controllers/author-course';
-// import * as LectureCourse from './controllers/lecture-course';
-// import * as UserCourse from './controllers/user-course';
-// import * as CommentCourse from './controllers/comment-course';
+import * as SearchCourse from './controllers/search-course';
+import * as AuthorCourse from './controllers/author-course';
+import * as LectureCourse from './controllers/lecture-course';
+import * as UserCourse from './controllers/user-course';
+import * as CommentCourse from './controllers/comment-course';
 
 seedrandom();
 Math.seedrandom();
@@ -35,22 +35,22 @@ mongoose.connect(config.database, {useMongoClient: true,
         if (process.env.INITDB === "TRUE") {
             mongoose.connection.dropDatabase()
                 .then(function () {
-                    // Sequence()
-                    //   .then(function () {
-                    //       AuthorCourse.buildAuthor();
-                    //       SearchCourse.buildCourse();
-                    //       LectureCourse.buildLecture();
-                    //       UserCourse.buildUser();
-                    //       CommentCourse.buildComment();
-                    //   });
+                    Sequence()
+                      .then(function () {
+                          AuthorCourse.buildAuthor();
+                          SearchCourse.buildCourse();
+                          LectureCourse.buildLecture();
+                          UserCourse.buildUser();
+                          CommentCourse.buildComment();
+                      });
                 });
         }
-        //
-        // AuthorCourse.populate();
-        // SearchCourse.populate();
-        // LectureCourse.populate();
-        // UserCourse.populate();
-        // CommentCourse.populate();
+
+        AuthorCourse.populate();
+        SearchCourse.populate();
+        LectureCourse.populate();
+        UserCourse.populate();
+        CommentCourse.populate();
     })
     .catch((err) => {
         if (err) {
@@ -93,7 +93,7 @@ passport.deserializeUser(function (user, done) {
     done(null, user);
 });
 
-// router(app);
+router(app);
 
 const port = process.env.PORT || config.port;
 const server = http.createServer(app);

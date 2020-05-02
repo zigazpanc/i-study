@@ -11,6 +11,10 @@
     "start": "npm run clean && npm run webpack-dev-server",
     "deploy": "NODE_ENV=production npm run clean && npm run webpack -p"
   },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/zigazpanc/i-study"
+  },
   "author": "",
   "license": "ISC",
   "devDependencies": {

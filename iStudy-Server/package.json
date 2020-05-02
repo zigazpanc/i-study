@@ -10,6 +10,10 @@
     "start": "nodemon index.js --exec babel-node",
     "test": "mocha --compilers js:babel-register"
   },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/zigazpanc/i-study"
+  },
   "author": "",
   "license": "ISC",
   "devDependencies": {
