@@ -40,7 +40,7 @@
     "@babel/core": "^7.0.0",
     "acorn": "^6.4.1",
     "async": "^3.2.0",
-    "axios": "^0.19.2",
+    "axios": "^0.21.1",
     "babel-polyfill": "^6.26.0",
     "bootstrap": "^4.4.1",
     "dateformat": "^3.0.3",
