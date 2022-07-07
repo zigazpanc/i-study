@@ -52,7 +52,7 @@
     "lodash": "^4.17.15",
     "material-ui": "^0.18.6",
     "materialize-css": "^1.0.0",
-    "moment": "^2.25.1",
+    "moment": "^2.29.4",
     "moment-timezone": "^0.5.28",
     "popper.js": "^1.16.0",
     "prop-types": "^15.7.2",
